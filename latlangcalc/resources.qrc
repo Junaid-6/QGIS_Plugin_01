@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/latlangcalc" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>

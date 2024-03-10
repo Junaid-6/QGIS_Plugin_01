@@ -1,0 +1,29 @@
+[general]
+name=PostGIS Toolbox
+qgisMinimumVersion=3.16
+description=Plugin for QGIS implementing selected PostGIS functions
+version=1.1
+author=Eryk Chełchowski
+email=erwinek1998@gmail.com
+about=The plugin implements:
+ • database and schema management mechanism,
+ • import of vector and raster data,
+ • extended query editor,
+ • several algorithms for vectors and rasters.
+
+homepage=https://github.com/eryk918/postgis_toolbox
+tracker=https://github.com/eryk918/postgis_toolbox/issues
+repository=https://github.com/eryk918/postgis_toolbox
+
+hasProcessingProvider=yes
+# Uncomment the following line and add your changelog:
+# changelog=
+
+category=Database
+tags=processing, raster, database, postgis, postgres, postgresql, spatial, schema
+icon=icons/main.png
+experimental=False
+
+deprecated=False
+server=False
+

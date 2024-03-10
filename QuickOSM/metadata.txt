@@ -1,0 +1,44 @@
+[general]
+name=QuickOSM
+qgisMinimumVersion=3.22
+qgisMaximumVersion=3.99
+description=Download OSM data thanks to the Overpass API. You can also open local OSM or PBF files. A special parser, on top of OGR, is used to let you see all OSM keys available.
+about=Execute customs Overpass queries in QGIS to get OSM data.
+author=Etienne Trimaille
+email=etienne@trimaille.eu
+hasProcessingProvider=yes
+server=False
+
+# End of mandatory metadata
+
+# Done automatically by qgis-plugin-ci
+version=2.2.3
+commitNumber=1
+commitSha1=ad57bc8c724ed8364fef3ccca0dc05856c0f9d98
+dateTime=2023-08-10T07:35:55Z
+changelog=
+ Version 2.2.3:
+ * Switch from POST to GET for Nominatim requests
+
+ Version 2.2.2:
+ * Update default JOSM/Vespucci presets from 5.3.1 to 5.4.0
+
+ Version 2.2.1:
+ * Update the list of Overpass servers
+ * Update default JOSM/Vespucci presets from 5.1.0 to 5.3.1
+
+
+# End of qgis-plugin-ci
+
+# Tags are comma separated with spaces allowed
+tags=osm,openstreetmap,overpass,download,osmdownload,josm,remote,pbf,processing,modeler
+
+homepage=https://docs.3liz.org/QuickOSM/
+tracker=https://github.com/3liz/QuickOSM/issues
+repository=https://github.com/3liz/QuickOSM
+icon=resources/icons/QuickOSM.svg
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False

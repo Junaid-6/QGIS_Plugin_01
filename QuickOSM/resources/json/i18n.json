@@ -1,0 +1,114 @@
+{
+    "de": {
+        "name": "German",
+        "translated_strings": 302,
+        "percentage": 100.0
+    },
+    "es": {
+        "name": "Spanish",
+        "translated_strings": 302,
+        "percentage": 100.0
+    },
+    "fr": {
+        "name": "French",
+        "translated_strings": 302,
+        "percentage": 100.0
+    },
+    "it": {
+        "name": "Italian",
+        "translated_strings": 302,
+        "percentage": 100.0
+    },
+    "nl": {
+        "name": "Dutch",
+        "translated_strings": 302,
+        "percentage": 100.0
+    },
+    "en": {
+        "name": "English",
+        "translated_strings": 4753,
+        "percentage": 74.94,
+        "total_strings": 302,
+        "nb_languages": 21
+    },
+    "zh": {
+        "name": "Chinese",
+        "translated_strings": 299,
+        "percentage": 99.01
+    },
+    "ro": {
+        "name": "Romanian",
+        "translated_strings": 296,
+        "percentage": 98.01
+    },
+    "uk": {
+        "name": "Ukrainian",
+        "translated_strings": 290,
+        "percentage": 96.03
+    },
+    "zh_TW": {
+        "name": "Chinese (Taiwan)",
+        "translated_strings": 286,
+        "percentage": 94.7
+    },
+    "fi": {
+        "name": "Finnish",
+        "translated_strings": 279,
+        "percentage": 92.38
+    },
+    "ko": {
+        "name": "Korean",
+        "translated_strings": 279,
+        "percentage": 92.38
+    },
+    "pt_BR": {
+        "name": "Portuguese (Brazil)",
+        "translated_strings": 279,
+        "percentage": 92.38
+    },
+    "hu": {
+        "name": "Hungarian",
+        "translated_strings": 276,
+        "percentage": 91.39
+    },
+    "id": {
+        "name": "Indonesian",
+        "translated_strings": 276,
+        "percentage": 91.39
+    },
+    "pl": {
+        "name": "Polish",
+        "translated_strings": 274,
+        "percentage": 90.73
+    },
+    "vi": {
+        "name": "Vietnamese",
+        "translated_strings": 230,
+        "percentage": 76.16
+    },
+    "ru": {
+        "name": "Russian",
+        "translated_strings": 155,
+        "percentage": 51.32
+    },
+    "pt": {
+        "name": "Portuguese",
+        "translated_strings": 15,
+        "percentage": 4.97
+    },
+    "he": {
+        "name": "Hebrew",
+        "translated_strings": 5,
+        "percentage": 1.66
+    },
+    "da": {
+        "name": "Danish",
+        "translated_strings": 4,
+        "percentage": 1.32
+    },
+    "sv": {
+        "name": "Swedish",
+        "translated_strings": 0,
+        "percentage": 0.0
+    }
+}
