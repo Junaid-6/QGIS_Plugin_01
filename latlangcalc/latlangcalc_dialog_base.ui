@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>869</width>
-    <height>596</height>
+    <width>573</width>
+    <height>314</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -76,7 +76,7 @@
     <number>90</number>
    </property>
   </widget>
-  <widget class="QSpinBox" name="sb_L_S">
+  <widget class="QSpinBox" name="sb_Lat_S">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -92,10 +92,10 @@
     <number>90</number>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="dsb_Lat">
+  <widget class="QDoubleSpinBox" name="sbLatDD">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>370</x>
      <y>120</y>
      <width>121</width>
      <height>26</height>
@@ -106,6 +106,9 @@
    </property>
    <property name="decimals">
     <number>5</number>
+   </property>
+   <property name="minimum">
+    <double>-90.000000000000000</double>
    </property>
    <property name="maximum">
     <double>90.000000000000000</double>
@@ -130,10 +133,10 @@
     <number>90</number>
    </property>
   </widget>
-  <widget class="QDoubleSpinBox" name="dsb_lng">
+  <widget class="QDoubleSpinBox" name="sbLngDD">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>370</x>
      <y>220</y>
      <width>121</width>
      <height>26</height>
@@ -144,6 +147,9 @@
    </property>
    <property name="decimals">
     <number>5</number>
+   </property>
+   <property name="minimum">
+    <double>-90.000000000000000</double>
    </property>
    <property name="maximum">
     <double>90.000000000000000</double>
@@ -231,6 +237,52 @@
    <property name="text">
     <string>The Converter</string>
    </property>
+  </widget>
+  <widget class="QComboBox" name="cb_Lng_Hshpere">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>220</y>
+     <width>86</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string>N</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>S</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="cb_Lat_Hshpere">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>120</y>
+     <width>86</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+   <item>
+    <property name="text">
+     <string>N</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>S</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>
