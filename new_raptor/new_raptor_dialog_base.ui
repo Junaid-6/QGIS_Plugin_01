@@ -47,7 +47,7 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QDoubleSpinBox" name="spbLat">
+     <widget class="QDoubleSpinBox" name="sbLat">
       <property name="suffix">
        <string> DD</string>
       </property>
@@ -76,7 +76,7 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QDoubleSpinBox" name="dsblng">
+     <widget class="QDoubleSpinBox" name="sbLng">
       <property name="decimals">
        <number>5</number>
       </property>

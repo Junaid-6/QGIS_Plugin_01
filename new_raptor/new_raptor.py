@@ -24,6 +24,8 @@
 from qgis.PyQt.QtCore import QSettings, QTranslator, QCoreApplication, QDate
 from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction, QMessageBox
+from qgis.core import QgsProject, QgsGeometry, QgsFeature, QgsPoint
+
 
 # Initialize Qt resources from file resources.py
 from .resources import *
@@ -188,7 +190,34 @@ class NewRaptor:
         if self.first_start == True:
             self.first_start = False
             self.dlg = NewRaptorDialog()
+            self.dlg.cbSpecies.currentTextChanged.connect(self.cbSpeciesChanged)
+            #QMessageBox.information(self.dlg, "Message", "Should only run once")
+        
+        #QMessageBox.information(self.dlg, "Message", "Sould run every time")
+        mc = self.iface.mapCanvas()
+        self.dlg.sbLat.setValue(mc.center().y())
+        self.dlg.sbLng.setValue(mc.center().x())
+        self.dlg.dateLastSurvey.setDate(QDate.currentDate())
 
+        mapLayers = []
+        for lyr in mc.layers():
+            mapLayers.append(lyr.name())
+
+        missing_layer = []
+
+        if not "Raptor Nests" in mapLayers:
+            missing_layer.append("Raptor Nests")
+        if not "Raptor Buffer" in mapLayers:
+            missing_layer.append("Raptor Buffer")
+
+        if missing_layer:
+            msg = "The Following layer is missing in the project: \n"
+            for lyr in missing_layer:
+                msg += "\n{}".format(lyr)
+            QMessageBox.critical(self.dlg, "Missing Layers", msg)
+            return 
+
+        QMessageBox.information(self.dlg, "Layers", str(mapLayers))
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop
@@ -196,5 +225,50 @@ class NewRaptor:
         # See if OK was pressed
         if result:
             # Do something useful here - delete the line containing pass and
-            # substitute with your code.
-            pass
+            # substitute with your code. 
+            lyrNests = QgsProject.instance().mapLayersByName("Raptor Nests")[0]
+            lysBuffer = QgsProject.instance().mapLayersByName("Raptor Buffer")[0]
+            idxNest = lyrNests.fields().indexOf("Nest_ID")
+            valNestID = lyrNests.maximumValue(idxNest)+1
+
+            lat = self.dlg.sbLat.value()
+            lng = self.dlg.sbLng.value()
+            species = self.dlg.cbSpecies.currentText()
+            distBuffer = self.dlg.sbBuffer.value()
+            status = self.dlg.cbStatus.currentText()
+            date = self.dlg.dateLastSurvey.date()
+
+            QMessageBox.information(self.dlg, "Message", "Latitude: {}\n Longitude: {} \n Species: {} \n Buffer Distance: {} \n Status: {} \n Date: {}".format(lat, lng, species, distBuffer, status, date))
+            
+            ftrNest = QgsFeature(lyrNests.fields())
+            ftrNest.setAttribute("lat_y_dd", lat)
+            ftrNest.setAttribute("long_x_dd", lng)
+            ftrNest.setAttribute("recentspec", species)
+            ftrNest.setAttribute("buf_dist", distBuffer)
+            ftrNest.setAttribute("recentstat", status)
+            ftrNest.setAttribute("lastsurvey", date)
+            ftrNest.setAttribute("Nest_Id", valNestID)
+
+            geom = QgsGeometry(QgsPoint(lng, lat))
+            ftrNest.setGeometry(geom)
+            pr = lyrNests.dataProvider()
+            pr.addFeatures([ftrNest])
+            lyrNests.reload()
+
+            pr = lysBuffer.dataProvider()
+            Buffer = geom.buffer(distBuffer, 10)
+            ftrNest.setGeometry(Buffer)
+            pr.addFeatures([ftrNest])
+            lysBuffer.reload()
+
+            QMessageBox.information(self.dlg, "Message", "New Nest Id {}".format(valNestID))
+            QMessageBox.information(self.dlg, "Message", "Sould run when ok is clicked")
+        else:
+            QMessageBox.information(self.dlg, "Message", "Should run when cancel button is pressed")
+
+
+    def cbSpeciesChanged(self, species):
+        if species == "Swainsons Hawk":
+            self.dlg.sbBuffer.setValue(0.004)
+        else:
+            self.dlg.sbBuffer.setValue(0.008)
