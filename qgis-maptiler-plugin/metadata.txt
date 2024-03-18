@@ -1,0 +1,42 @@
+# This file contains metadata for your plugin.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=MapTiler
+qgisMinimumVersion=3.24
+description=Street and satellite base maps with vector tiles
+version=3.2
+author=MapTiler
+email=info@maptiler.com
+
+about=- Beautiful base maps using OpenStreetMap data powered by vector tiles - served from MapTiler Cloud.
+
+  - Satellite map of the entire world, outdoor map, hillshading and landcover, Ordnance Survey Open ZoomStack, Dutch Kadaster via Cartiqo, or GSI data in Japan - or your own datasets!
+
+  - Global digital elevation model (DEM) for the entire planet.
+
+  - Customize language & colors of your map with a few clicks!
+
+  - Import your own Mapbox GL JSON style or TileJSON from any URL - even hosted on your own server.
+
+  - Print the maps using vector PDF.
+
+tracker=https://github.com/maptiler/qgis-maptiler-plugin/issues
+repository=https://github.com/maptiler/qgis-maptiler-plugin
+# End of mandatory metadata
+
+# Recommended items:
+
+hasProcessingProvider=no
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=maptiler, open, map, maps, tiles, openmaptiles, osm, openstreetmap, raster, vector, wmts, tilejson, mapbox, gl, style, styles, geocoding, basemaps, quickmapservices, vector-tiles, geojson, reader, xyz, print, ordnance survey, zoomstack, kadaster, cartiqo, gsi, japan, outdoor, carto, dem, digital, elevation, model, cadastre, cadastral, hillshade, terrain, ocean, rgb
+
+homepage=https://maptiler.link/qgisplugin
+category=Web
+icon=./imgs/icon_maptiler.svg
+# experimental flag
+experimental=False
